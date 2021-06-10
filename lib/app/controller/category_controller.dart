@@ -60,7 +60,7 @@ class CategoryController extends GetxController {
 
   // Order by product
   getProductOrderBy(String type) {
-    print("crthang vao day");
+    // print("MS shop vao day");
     firebaseFirestore
         .collection("products")
         .orderBy('price')
@@ -69,7 +69,7 @@ class CategoryController extends GetxController {
       snapshot.docs.forEach((doc) {
         Product product = Product.fromMap(doc.data());
         temp.add(product);
-        print("crthang price ${product.price}");
+        // print("MS Shop price ${product.price}");
         update();
       });
     });

@@ -10,6 +10,7 @@ import 'package:shopping_phone/app/ui/theme/app_theme.dart';
 
 class CartPage extends StatelessWidget {
   TextEditingController phoneController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +86,22 @@ class CartPage extends StatelessWidget {
                                         border: OutlineInputBorder(),
                                         labelText: 'Phone number...',
                                       ),
+                                    ),
+                                    Center(
+                                      child: Text(
+                                        "Enter your address",
+                                        style: TextStyle(
+                                            color: Colors.grey, fontSize: 14),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                    TextField(
+                                      keyboardType: TextInputType.text,
+                                      controller: addressController,
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        labelText: 'Address...',
+                                      ),
                                     )
                                   ],
                                 ),
@@ -93,7 +110,10 @@ class CartPage extends StatelessWidget {
                                     Get.back();
                                     orderController.addToCollection(
                                         phoneController.text.trim());
+                                    orderController.addToCollection(
+                                        addressController.text.trim());
                                     phoneController.clear();
+                                    addressController.clear();
                                   } else {
                                     Get.snackbar(
                                         "Error", "Phone number is required");

@@ -30,7 +30,7 @@ class OrderController extends GetxController {
         payments.add(payment);
         update();
       });
-      print("crthang order ${payments.length}");
+      print("MS Shop order ${payments.length}");
     });
   }
 
@@ -58,6 +58,8 @@ class OrderController extends GetxController {
           '${_now.year}/${_now.month}/${_now.day}- ${_now.hour}:${_now.minute}',
       "cart": userController.userModel.value.cartItemsToJson(),
     });
+
+    // print("MS Shop order ${}");
 
     firebaseFirestore
         .collection("users")
