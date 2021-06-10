@@ -109,14 +109,14 @@ class CartPage extends StatelessWidget {
                                   if (phoneController.text != "") {
                                     Get.back();
                                     orderController.addToCollection(
-                                        phoneController.text.trim());
-                                    orderController.addToCollection(
+                                        phoneController.text.trim(),
                                         addressController.text.trim());
+
                                     phoneController.clear();
                                     addressController.clear();
                                   } else {
-                                    Get.snackbar(
-                                        "Error", "Phone number is required");
+                                    Get.snackbar("Error",
+                                        "Phone and address number is required");
                                   }
                                 });
                           }),

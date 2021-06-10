@@ -7,6 +7,7 @@ class OrderModel {
   static const PHONE = "phone";
   static const CART = "cart";
   static const NAME_USER = "nameUser";
+  static const ADDRESS = "address";
 
   String id;
   String userId;
@@ -16,6 +17,7 @@ class OrderModel {
   String phone;
   List cart;
   String nameUser;
+  String address;
 
   OrderModel(
       {this.id,
@@ -25,7 +27,8 @@ class OrderModel {
       this.createdAt,
       this.phone,
       this.cart,
-      this.nameUser});
+      this.nameUser,
+      this.address});
 
   OrderModel.fromMap(Map data) {
     id = data[ID];
@@ -36,5 +39,6 @@ class OrderModel {
     phone = data[PHONE];
     cart = data[CART];
     nameUser = data[NAME_USER];
+    address = data[ADDRESS];
   }
 }

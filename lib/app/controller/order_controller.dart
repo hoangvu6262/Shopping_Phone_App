@@ -44,7 +44,7 @@ class OrderController extends GetxController {
   }
 
   //thêm vào Collection
-  void addToCollection(String phoneNumber) {
+  void addToCollection(String phoneNumber, String address) {
     DateTime _now = new DateTime.now();
     String id = Uuid().v1();
     firebaseFirestore.collection(collection).doc(id).set({
@@ -53,6 +53,7 @@ class OrderController extends GetxController {
       "userId": userController.userModel.value.id,
       "amount": cartController.totalCartPrice.value.toStringAsFixed(2),
       "nameUser": userController.userModel.value.name,
+      "address": address,
       "status": 'Pending',
       "createdAt":
           '${_now.year}/${_now.month}/${_now.day}- ${_now.hour}:${_now.minute}',
