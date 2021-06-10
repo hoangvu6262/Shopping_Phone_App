@@ -52,6 +52,7 @@ class OrderController extends GetxController {
       "phone": phoneNumber,
       "userId": userController.userModel.value.id,
       "amount": cartController.totalCartPrice.value.toStringAsFixed(2),
+      "nameUser": userController.userModel.value.name,
       "status": 'Pending',
       "createdAt":
           '${_now.year}/${_now.month}/${_now.day}- ${_now.hour}:${_now.minute}',

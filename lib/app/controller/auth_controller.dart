@@ -129,8 +129,8 @@ class UserController extends GetxController {
         .snapshots()
         .map((snapshot) {
       count = RxInt(UserModel.fromSnapshot(snapshot).cart.length);
-      print("crthang Hello user: ${UserModel.fromSnapshot(snapshot).email}");
-      print("crthang Giỏ hàng: $count");
+      print("MS shop Hello user: ${UserModel.fromSnapshot(snapshot).email}");
+      print("MS shop Giỏ hàng: $count");
 
       update();
       return UserModel.fromSnapshot(snapshot);
